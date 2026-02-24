@@ -1,3 +1,7 @@
-body {
-    background-color: skyblue;
+.quantity > a.space-left {
+  margin-left: 10px;
+}
+
+.quantity > a.space-right {
+  margin-right: 10px;
 }

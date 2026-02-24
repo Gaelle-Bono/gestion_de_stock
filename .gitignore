@@ -18,3 +18,7 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+
+#Ignore vscode AI rules
+.github\instructions\codacy.instructions.md

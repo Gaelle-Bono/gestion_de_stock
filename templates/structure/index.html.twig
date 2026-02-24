@@ -1,0 +1,28 @@
+{% extends 'crud/list.html.twig' %}
+
+{% block title %}Liste des structures{% endblock %}
+{% block page_title %}Liste des structures{% endblock %}
+
+{% block thead_td %}
+    <th>Id</th>
+    <th>Name</th>
+    <th>actions</th>
+{% endblock %}
+
+{% block tbody %}
+    {% for structure in structures %}
+        <tr>
+            <td>{{ structure.id }}</td>
+            <td>{{ structure.name }}</td>
+            <td>
+                <a href="{{ path('app_structure_show', {'id': structure.id}) }}">show</a>
+                <a href="{{ path('app_structure_edit', {'id': structure.id}) }}">edit</a>
+                <a href="{{ path('app_structure_delete', {'id': structure.id}) }}">delete</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="3">no records found</td>
+        </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'crud/list.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+{% block page_title %}Liste des articles{% endblock %}
+
+{% block thead_td %}
+    <th>Id</th>
+    <th>Name</th>
+    <th>actions</th>
+{% endblock %}
+
+{% block tbody %}
+    {% for article in articles %}
+        <tr>
+            <td>{{ article.id }}</td>
+            <td>{{ article.name }}</td>
+            <td>
+                <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
+                <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                <a href="{{ path('app_article_delete', {'id': article.id}) }}">delete</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="3">no records found</td>
+        </tr>
+    {% endfor %}
+{% endblock %}
